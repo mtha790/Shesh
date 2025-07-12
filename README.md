@@ -1,24 +1,22 @@
 # Shesh: A Shell Interface for Common Lisp
 
+**🚧 Work in Progress 🚧**
+
 Shesh is a lightweight Common Lisp library that provides a simple and intuitive interface for interacting with shell processes.
-
-## Features
-
-- **Persistent Shell Sessions**: Maintain a single shell process across multiple commands
-- **State Preservation**: Working directory and environment variables persist between commands
-- **Simple API**: Easy-to-use functions and macros for common shell operations
-- **Output Capture**: Automatically captures and stores command output
-- **Variable Expansion**: Use Lisp variables in shell commands with `$` syntax
-- **Smart Command Completion**: Accurately detects when commands finish execution
-- **No Quotes Needed**: Write shell commands naturally without string quotes
 
 ## Installation
 
-1. Clone this repository to your local machine
-2. Load the system using ASDF:
+1. Clone this repository to your local machine. Clone it in your `quicklisp/local-project` or declare it in `source-registry.conf`
+2. Load the system
 
 ```lisp
 (asdf:load-system "shesh")
+```
+
+or 
+
+```lisp
+(ql:quickload "shesh")
 ```
 
 ## Basic Usage
@@ -101,15 +99,6 @@ Shesh supports automatic variable expansion using the `$` prefix:
 - `*current-shell*` - The current shell process object
 - `*stdout*` - Buffer containing the shell output
 
-## Examples
-
-See `example.lisp` for comprehensive examples including:
-- Basic command execution
-- Variable expansion
-- File operations
-- Process management
-- Error handling
-- Command timing
 
 ## Testing
 
