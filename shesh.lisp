@@ -139,36 +139,6 @@
           *shell-output-stream* nil
           *stdout* "")))
 
-;;; Example usage functions
-(defun example-usage ()
-  "Show example usage of the shell interface"
-  (format t "~%=== Shell Interface Example ===~%~%")
-
-  ;; Initialize shell
-  (format t "Initializing shell...~%")
-  (init-shell)
-
-  ;; Execute pwd
-  (format t "~%Executing 'pwd':~%")
-  (let ((result (exec "pwd")))
-    (format t "Output: ~A" result))
-
-  ;; Execute ls
-  (format t "~%Executing 'ls -la':~%")
-  (let ((result (exec "ls -la")))
-    (format t "Output: ~A" result))
-
-  ;; Execute cd and then pwd to verify
-  (format t "~%Executing 'cd ..' and then 'pwd':~%")
-  (exec "cd ..")
-  (let ((result (exec "pwd")))
-    (format t "Output after cd: ~A" result))
-
-  ;; Clean up
-  (format t "~%Closing shell...~%")
-  (close-shell)
-  (format t "Done.~%"))
-
 ;;; Alternative exec with timeout
 (defun exec-with-timeout (command &optional (timeout 1.0))
   "Execute a command with a timeout for output collection"
